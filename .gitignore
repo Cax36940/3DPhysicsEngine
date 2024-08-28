@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# Ignore all Makefiles
+Makefile
+
+# Ignore CMake-generated files and directories (optional but common in C++ projects)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
