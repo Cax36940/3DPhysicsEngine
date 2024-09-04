@@ -73,19 +73,9 @@ public:
 
     /**
      * @brief Vector euclidean norm
-     */
-    float norm() const;
-
-    /**
-     * @brief Vector euclidean norm
      * @param vector The vector from which to take the norm
      */
     static float norm(const Vector3& vector);
-
-    /**
-     * @brief Vector normalization
-     */
-    Vector3 normalize() const;
 
     /**
      * @brief Vector normalization

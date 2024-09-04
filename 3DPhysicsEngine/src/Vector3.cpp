@@ -29,24 +29,12 @@ Vector3& Vector3::operator+=(const Vector3& vector) {
     return *this;
 }
 
-float Vector3::norm() const {
-    return sqrtf(this->x * this->x + this->y * this->y + this->z * this->z);
-}
-
 float Vector3::norm(const Vector3& vector) {
     return sqrtf(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
 }
 
-Vector3 Vector3::normalize() const {
-    float norm = this->norm();
-    if (norm > 0) {
-        return Vector3(this->x / norm, this->y / norm, this->z / norm);
-    }
-    return Vector3(1, 0, 0);
-}
-
 Vector3 Vector3::normalize(const Vector3& vector) {
-    float norm = vector.norm();
+    float norm = Vector3::norm(vector);
     if (norm > 0) {
         return Vector3(vector.x / norm, vector.y / norm, vector.z / norm);
     }
