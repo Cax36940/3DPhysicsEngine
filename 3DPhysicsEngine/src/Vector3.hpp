@@ -41,6 +41,12 @@ public:
     Vector3(const float x, const float y, const float z);
 
     /**
+     * @brief Equal operator
+     * @param vector
+     */
+    bool operator==(const Vector3& vector);
+
+    /**
      * @brief Scalar multiplication on the right
      * @param alpha the scalar
      */
@@ -72,10 +78,34 @@ public:
     Vector3& operator+=(const Vector3& vector);
 
     /**
+     * @brief Vector subtraction (return new vector)
+     * @param vector the vector to add to current vector
+     */
+    Vector3 operator-(const Vector3& vector) const;
+
+    /**
+     * @brief Vector subtraction assignment
+     * @param vector the vector to add to current vector
+     */
+    Vector3& operator-=(const Vector3& vector);
+
+    /**
      * @brief Vector euclidean norm
      * @param vector The vector from which to take the norm
      */
     static float norm(const Vector3& vector);
+
+    /**
+     * @brief Vector euclidean squared norm
+     * @param vector The vector from which to take the norm
+     */
+    static float norm2(const Vector3& vector);
+
+    /**
+     * @brief Inverse of vector euclidean norm
+     * @param vector The vector from which to take the norm
+     */
+    static float inv_norm(const Vector3& vector);
 
     /**
      * @brief Vector normalization
@@ -84,14 +114,21 @@ public:
     static Vector3 normalize(const Vector3& vector);
 
     /**
-     * @brief Vector dot product
+     * @brief Convolution between two vectors 
+     * @param vector_u
+     * @param vector_v
+     */
+    static Vector3 conv(const Vector3& vector_u, const Vector3& vector_v);
+
+    /**
+     * @brief Dot product between two vectors
      * @param vector_u
      * @param vector_v
      */
     static float dot(const Vector3& vector_u, const Vector3& vector_v);
 
     /**
-     * @brief Vector cross product
+     * @brief Cross product between two vectors
      * @param vector_u
      * @param vector_v
      */
